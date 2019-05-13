@@ -10,7 +10,9 @@
 	},
 	"author": "Khanis Anthony",
 	"license": "ISC",
-	"dependencies": {},
+	"dependencies": {
+		"@babel/polyfill": "^7.4.4"
+	},
 	"devDependencies": {
 		"@babel/cli": "^7.4.4",
 		"@babel/core": "^7.4.4",
