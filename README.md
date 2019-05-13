@@ -9,10 +9,9 @@ These instructions will get you a copy of the project to your local machine for 
 ### Prerequisites
 
 Required software to install
-```
+
 [NodeJS](https://nodejs.org/en/) v10.15.3 or higher
 [NPM](https://www.npmjs.com/) v6.9.0 or higher
-```
 
 
 ### Running the code locally
