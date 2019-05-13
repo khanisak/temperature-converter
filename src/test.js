@@ -1,3 +1,16 @@
-const a = 'wwkwkwkw';
+import _ from 'lodash'
 
-console.log(a);
+const fruits = [
+    'apple',
+    'grape',
+    'orange',
+    'banana',
+    'blueberry'
+]
+
+const findIndexofBanana = () => {
+    let index = _.indexOf(fruits, 'banana');
+    return index;
+}
+
+console.log(findIndexofBanana());

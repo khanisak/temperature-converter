@@ -1,5 +1,5 @@
 {
-	"name": "kalkulator-finansial-crontab",
+	"name": "nodejs-es6-boilerplate",
 	"version": "1.0.0",
 	"description": "Code to run crontab in Linux",
 	"main": "index.js",
@@ -11,13 +11,15 @@
 	"author": "Khanis Anthony",
 	"license": "ISC",
 	"dependencies": {
-		"@babel/polyfill": "^7.4.4"
+		"@babel/polyfill": "^7.4.4",
+		"lodash": "^4.17.11"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.4.4",
 		"@babel/core": "^7.4.4",
 		"@babel/node": "^7.2.2",
 		"@babel/plugin-proposal-class-properties": "^7.4.4",
-		"@babel/preset-env": "^7.4.4"
+		"@babel/preset-env": "^7.4.4",
+		"nodemon": "^1.19.0"
 	}
 }
