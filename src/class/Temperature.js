@@ -4,9 +4,11 @@ import Kelvin from './Kelvin';
 
 class Temperature {
 
-    static C = Celcius.order;
-    static F = Fahrenheit.order;
-    static K = Kelvin.order;
+    static unit = {
+        Celcius: Celcius.order,
+        Fahrenheit: Fahrenheit.order,
+        Kelvin: Kelvin.order
+    }
 
     formula = () => {
         return [

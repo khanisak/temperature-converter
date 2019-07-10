@@ -1,13 +1,6 @@
-import T from './class/Temperature';
-import Celcius from './class/Celcius'
-import Fahrenheit from './class/Fahrenheit'
-import Kelvin from './class/Kelvin'
-
-const Temperature = new T();
+import Temperature from './class/Temperature';
 
 export default Temperature;
-export {
-    Celcius, 
-    Fahrenheit, 
-    Kelvin
-}
+export * from './class/Celcius'
+export * from './class/Fahrenheit'
+export * from './class/Kelvin'
