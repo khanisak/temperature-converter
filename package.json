@@ -1,8 +1,8 @@
 {
 	"name": "@khanisak/temperature-converter",
-	"version": "1.0.1",
+	"version": "1.0.5",
 	"description": "Javascript library to convert temperature",
-	"main": "index.js",
+	"main": "build/index.js",
 	"scripts": {
 		"start": "npm run build && node xxx",
 		"clean": "rm -rf build && mkdir build",
@@ -10,6 +10,14 @@
 	},
 	"author": "Khanis Anthony",
 	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/khanisak/temperature-converter.git"
+	},
+	"bugs": {
+		"url": "https://github.com/khanisak/temperature-converter/issues",
+		"email": "khanis.anthony@gmail.com"
+	},
 	"dependencies": {
 		"@babel/polyfill": "^7.4.4",
 		"lodash": "^4.17.13"

@@ -4,9 +4,11 @@ import Kelvin from './Kelvin';
 
 class Temperature {
 
-    static C = Celcius.order;
-    static F = Fahrenheit.order;
-    static K = Kelvin.order;
+    static unit = {
+        Celcius: Celcius.order,
+        Fahrenheit: Fahrenheit.order,
+        Kelvin: Kelvin.order
+    }
 
     formula = () => {
         return [
@@ -21,7 +23,7 @@ class Temperature {
             const x = new Temperature();
             let formula = x.formula();
             formula = formula[from][to]
-            if(!formula)
+            if (!formula)
                 throw 'No formula found!'
             return formula(value);
         } catch (err) {
