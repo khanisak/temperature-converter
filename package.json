@@ -1,6 +1,6 @@
 {
 	"name": "@khanisak/temperature-converter",
-	"version": "1.0.5",
+	"version": "1.0.8",
 	"description": "Javascript library to convert temperature",
 	"keywords": [
 		"temperature", "converter", "temperature-converter", "temperature converter", "celcius", "fahrenheit", "kelvin", "reamur"

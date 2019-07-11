@@ -6,6 +6,9 @@ class Celcius {
     static toKelvin = (celcius = 1) => {
         return celcius + 273.15
     }
+    static toReamur = (celcius = 1) => {
+        return celcius * 0.8
+    }
 }
 
 export { Celcius }

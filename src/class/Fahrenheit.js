@@ -6,6 +6,9 @@ class Fahrenheit {
     static toCelcius = (fahrenheit = 1) => {
         return (fahrenheit - 32) * 5 / 9
     }
+    static toReamur = (fahrenheit = 1) => {
+        return (fahrenheit - 32) * 0.44
+    }
 }
 
 export { Fahrenheit }
