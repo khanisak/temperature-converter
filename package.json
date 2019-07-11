@@ -2,6 +2,9 @@
 	"name": "@khanisak/temperature-converter",
 	"version": "1.0.5",
 	"description": "Javascript library to convert temperature",
+	"keywords": [
+		"temperature", "converter", "temperature-converter", "temperature converter", "celcius", "fahrenheit", "kelvin", "reamur"
+	],
 	"main": "build/index.js",
 	"scripts": {
 		"start": "npm run build && node xxx",
