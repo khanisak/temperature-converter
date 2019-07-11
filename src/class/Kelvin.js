@@ -8,4 +8,4 @@ class Kelvin {
     }
 }
 
-export default Kelvin
+export { Kelvin }

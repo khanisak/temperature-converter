@@ -8,4 +8,4 @@ class Fahrenheit {
     }
 }
 
-export default Fahrenheit
+export { Fahrenheit }

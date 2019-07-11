@@ -8,4 +8,4 @@ class Celcius {
     }
 }
 
-export default Celcius
+export { Celcius }

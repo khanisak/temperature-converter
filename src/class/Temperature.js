@@ -1,6 +1,6 @@
-import Celcius from './Celcius'
-import Fahrenheit from './Fahrenheit'
-import Kelvin from './Kelvin';
+import { Celcius } from './Celcius'
+import { Fahrenheit } from './Fahrenheit'
+import { Kelvin } from './Kelvin';
 
 class Temperature {
 
@@ -34,4 +34,4 @@ class Temperature {
     _nothing = (val) => { return val; }
 }
 
-export default Temperature
+export { Temperature }

@@ -1,15 +1,21 @@
 {
     "presets": [
+        ["minify"],
         [
-            "@babel/preset-env",
-            {
+            "@babel/preset-env", {
+                "loose": true,
                 "targets": {
-                    "node": "current"
+                    "node": true
                 }
             }
         ]
     ],
     "plugins": [
+        [
+            "@babel/plugin-proposal-export-default-from", {
+                "loose": true
+            }
+        ],
         [
             "@babel/plugin-proposal-class-properties",
             {
