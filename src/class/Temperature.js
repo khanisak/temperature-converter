@@ -6,17 +6,29 @@ import { Reamur } from './Reamur'
 class Temperature {
 
     static units = [
-        "Celcius",
-        "Fahrenheit",
-        "Kelvin",
-        "Reamur"
+        {
+            "code": "°C",
+            "name": "Celcius"
+        },
+        {
+            "code": "°F",
+            "name": "Fahrenheit"
+        },
+        {
+            "code": "K",
+            "name": "Kelvin"
+        },
+        {
+            "code": "°Ré",
+            "name": "Réamur"
+        }
     ]
 
     static unit = {
         Celcius: Celcius.order,
         Fahrenheit: Fahrenheit.order,
         Kelvin: Kelvin.order,
-        Reamur: Reamur.order
+        Réamur: Reamur.order
     }
 
     formula = () => {
@@ -34,7 +46,7 @@ class Temperature {
             let formula = x.formula();
             try {
                 formula = formula[from][to]
-                if(!formula) throw 'err'
+                if (!formula) throw 'err'
             } catch (err) { throw 'No formula found! Please check unit supplied' }
             return formula(value);
         } catch (err) {
