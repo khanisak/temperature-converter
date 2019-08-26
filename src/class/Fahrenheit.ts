@@ -1,8 +1,10 @@
-import { Temperature } from './Temperature'
+import Unit from '../interface/Unit'
 
-class Fahrenheit extends Temperature {
-    static temperature_name: string = 'Fahrenheit'
-    static temperature_code: string = '°F'
+class Fahrenheit {
+    static unit: Unit = {
+        name: 'Fahrenheit',
+        code: '°F'
+    }
 
     static toKelvin(fahrenheit: number = 1): number {
         return ((fahrenheit - 32) * 5 / 9) + 273.15

@@ -1,15 +1,42 @@
 import { Celcius } from './Celcius'
 import { Fahrenheit } from './Fahrenheit'
-import { Kelvin } from './Kelvin';
+import { Kelvin } from './Kelvin'
 import { Reamur } from './Reamur'
+import Unit from '../interface/Unit'
 
 enum Temperatures { Celcius = 0, Fahrenheit, Kelvin, Reamur }
-
-abstract class Temperature {
-    static names: string;
-    static code: string;
+class Temperature {
+    static unit = Temperatures
+    static units: Unit[] = [
+        Celcius.unit,
+        Fahrenheit.unit,
+        Kelvin.unit,
+        Reamur.unit
+    ]
 
     static _nothing(val: number): number { return val; };
+    formula(): ((val: number) => number)[][] { // return array of function which return number
+        return [
+            [Temperature._nothing, Celcius.toFahrenheit, Celcius.toKelvin, Celcius.toReamur],
+            [Fahrenheit.toCelcius, Temperature._nothing, Fahrenheit.toKelvin, Fahrenheit.toReamur],
+            [Kelvin.toCelcius, Kelvin.toFahrenheit, Temperature._nothing, Kelvin.toReamur],
+            [Reamur.toCelcius, Reamur.toFahrenheit, Reamur.toKelvin, Temperature._nothing]
+        ]
+    }
+
+    convert(value: number, from: Temperatures, to: Temperatures): number {
+        try {
+            const x = new Temperature();
+            let formulas = x.formula();
+            try {
+                let formula = formulas[from][to]
+                if (!formula) throw 'err'
+                return formula(value);
+            } catch (err) { throw 'No formula found! Please check unit supplied' }
+        } catch (err) {
+            throw err;
+        }
+    }
 }
 
 // class Temperature implements Temperature {
@@ -33,37 +60,6 @@ abstract class Temperature {
 //         }
 //     ]
 
-//     static unit = {
-//         Celcius: Temps.Celcius,
-//         Fahrenheit: Temps.Fahrenheit,
-//         Kelvin: Temps.Kelvin,
-//         Réamur: Temps.Reamur
-//     }
-
-//     formula = () => {
-//         return [
-//             [this._nothing, Celcius.toFahrenheit, Celcius.toKelvin, Celcius.toReamur],
-//             [Fahrenheit.toCelcius, this._nothing, Fahrenheit.toKelvin, Fahrenheit.toReamur],
-//             [Kelvin.toCelcius, Kelvin.toFahrenheit, this._nothing, Kelvin.toReamur],
-//             [Reamur.toCelcius, Reamur.toFahrenheit, Reamur.toKelvin, this._nothing]
-//         ]
-//     }
-
-//     static convert = (value, from, to) => {
-//         try {
-//             const x = new Temperature();
-//             let formula = x.formula();
-//             try {
-//                 formula = formula[from][to]
-//                 if (!formula) throw 'err'
-//             } catch (err) { throw 'No formula found! Please check unit supplied' }
-//             return formula(value);
-//         } catch (err) {
-//             throw err
-//         }
-//     }
-
-//     _nothing = (val) => { return val; }
 // }
 
-export { Temperature }
+export { Temperature, Temperatures }

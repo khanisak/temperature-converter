@@ -1,8 +1,10 @@
-import { Temperature } from './Temperature'
+import Unit from '../interface/Unit'
 
-class Celcius extends Temperature {
-    static temperature_name: string = 'Celcius'
-    static temperature_code: string = '°C'
+class Celcius {
+    static unit: Unit = {
+        name: 'Celcius',
+        code: '°C'
+    }
 
     static toFahrenheit(celcius: number = 1): number {
         return (celcius * 9 / 5) + 32
