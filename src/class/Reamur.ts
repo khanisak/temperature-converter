@@ -23,6 +23,9 @@ class Reamur {
     static toDelisle(reamur: number = 1): number {
         return (80 - reamur) * 1.875
     }
+    static toRomer(reamur: number = 1): number {
+        return reamur * 21 / 32 + 7.5
+    }
 }
 
 export { Reamur }

@@ -29,6 +29,10 @@ class Delisle {
     static toRankine(delisle: number = 1): number {
         return 671.67 - delisle * 1.2
     }
+
+    static toRomer(delisle: number = 1): number {
+        return 60 - delisle * 0.35
+    }
 }
 
 export { Delisle }

@@ -24,6 +24,9 @@ class Fahrenheit {
     static toDelisle(fahrenheit: number = 1): number {
         return (212 - fahrenheit) * 5 / 6
     }
+    static toRomer(fahrenheit: number = 1): number {
+        return (fahrenheit - 32) * 7 / 24 + 7.5
+    }
 }
 
 export { Fahrenheit }

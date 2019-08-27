@@ -29,6 +29,10 @@ class Celcius {
     static toDelisle(celcius: number = 1): number {
         return (100 - celcius) * 1.5
     }
+
+    static toRomer(celcius: number = 1): number {
+        return celcius * 21 / 40 + 7.5
+    }
 }
 
 export { Celcius }

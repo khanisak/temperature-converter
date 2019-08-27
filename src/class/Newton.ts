@@ -29,6 +29,10 @@ class Newton {
     static toDelisle(newton: number = 1): number {
         return (33 - newton) * 50 / 11
     }
+
+    static toRomer(newton: number = 1): number {
+        return newton * 35 / 22 + 7.5
+    }
 }
 
 export { Newton }

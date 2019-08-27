@@ -23,6 +23,9 @@ class Kelvin {
     static toDelisle(kelvin: number = 1): number {
         return (373.15 - kelvin) * 1.5
     }
+    static toRomer(kelvin: number = 1): number {
+        return kelvin * 1.8 - 459.67
+    }
 }
 
 export { Kelvin }
