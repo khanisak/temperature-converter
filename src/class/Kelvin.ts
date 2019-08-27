@@ -14,6 +14,9 @@ class Kelvin {
     static toReamur(kelvin: number = 1): number {
         return (kelvin - 273.15) * 0.8
     }
+    static toNewton(kelvin: number = 1): number {
+        return (kelvin - 273.15) * 33 / 100
+    }
 }
 
 export { Kelvin }

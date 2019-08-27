@@ -17,6 +17,10 @@ class Celcius {
     static toReamur(celcius: number = 1): number {
         return celcius * 0.8
     }
+
+    static toNewton(celcius: number = 1): number {
+        return celcius * 33/100
+    }
 }
 
 export { Celcius }

@@ -14,6 +14,9 @@ class Reamur {
     static toKelvin(reamur: number = 1): number {
         return reamur / 0.8 + 273.15
     }
+    static toNewton(reamur: number = 1): number {
+        return reamur * 33 / 80
+    }
 }
 
 export { Reamur }

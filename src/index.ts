@@ -7,9 +7,3 @@ export default Temperature
 export {
     Celcius, Fahrenheit, Kelvin
 }
-
-
-const x = new Temperature();
-console.log(x.convert(1, Temperature.unit.Celcius, Temperatures.Fahrenheit))
-console.log(Temperature.units)
-console.log(Temperature.unit)

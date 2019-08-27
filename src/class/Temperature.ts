@@ -2,25 +2,28 @@ import { Celcius } from './Celcius'
 import { Fahrenheit } from './Fahrenheit'
 import { Kelvin } from './Kelvin'
 import { Reamur } from './Reamur'
+import { Newton } from './Newton'
 import Unit from '../interface/Unit'
 
-enum Temperatures { Celcius = 0, Fahrenheit, Kelvin, Reamur }
+enum Temperatures { Celcius = 0, Fahrenheit, Kelvin, Reamur, Newton}
 class Temperature {
     static unit = Temperatures
     static units: Unit[] = [
         Celcius.unit,
         Fahrenheit.unit,
         Kelvin.unit,
-        Reamur.unit
+        Reamur.unit,
+        Newton.unit
     ]
 
     static _nothing(val: number): number { return val; };
     formula(): ((val: number) => number)[][] { // return array of function which return number
         return [
-            [Temperature._nothing, Celcius.toFahrenheit, Celcius.toKelvin, Celcius.toReamur],
-            [Fahrenheit.toCelcius, Temperature._nothing, Fahrenheit.toKelvin, Fahrenheit.toReamur],
-            [Kelvin.toCelcius, Kelvin.toFahrenheit, Temperature._nothing, Kelvin.toReamur],
-            [Reamur.toCelcius, Reamur.toFahrenheit, Reamur.toKelvin, Temperature._nothing]
+            [Temperature._nothing, Celcius.toFahrenheit, Celcius.toKelvin, Celcius.toReamur, Celcius.toNewton],
+            [Fahrenheit.toCelcius, Temperature._nothing, Fahrenheit.toKelvin, Fahrenheit.toReamur,Fahrenheit.toNewton],
+            [Kelvin.toCelcius, Kelvin.toFahrenheit, Temperature._nothing, Kelvin.toReamur, Kelvin.toNewton],
+            [Reamur.toCelcius, Reamur.toFahrenheit, Reamur.toKelvin, Temperature._nothing, Reamur.toNewton],
+            [Newton.toCelcius, Newton.toFahrenheit, Newton.toKelvin, Newton.toReamur, Temperature._nothing]
         ]
     }
 
@@ -38,28 +41,5 @@ class Temperature {
         }
     }
 }
-
-// class Temperature implements Temperature {
-
-//     static units = [
-//         {
-//             "code": "°C",
-//             "name": "Celcius"
-//         },
-//         {
-//             "code": "°F",
-//             "name": "Fahrenheit"
-//         },
-//         {
-//             "code": "K",
-//             "name": "Kelvin"
-//         },
-//         {
-//             "code": "°Ré",
-//             "name": "Réamur"
-//         }
-//     ]
-
-// }
 
 export { Temperature, Temperatures }

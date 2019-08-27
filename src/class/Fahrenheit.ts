@@ -15,6 +15,9 @@ class Fahrenheit {
     static toReamur(fahrenheit: number = 1): number {
         return (fahrenheit - 32) * 0.44
     }
+    static toNewton(fahrenheit: number = 1): number {
+        return (fahrenheit - 32) * 11 / 60
+    }
 }
 
 export { Fahrenheit }
