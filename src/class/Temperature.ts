@@ -10,7 +10,12 @@ import Unit from '../interface/Unit'
 
 enum Temperatures { Celcius = 0, Fahrenheit, Kelvin, Reamur, Newton, Rankine, Delisle, Romer }
 class Temperature {
-    static unit = Temperatures
+    static unit = {
+        Celcius: Temperatures.Celcius, Fahrenheit: Temperatures.Fahrenheit,
+        Kelvin: Temperatures.Kelvin, Reamur: Temperatures.Reamur,
+        Newton: Temperatures.Newton, Rankine: Temperatures.Rankine,
+        Delisle: Temperatures.Delisle, Romer: Temperatures.Delisle
+    }
     static units: Unit[] = [
         Celcius.unit,
         Fahrenheit.unit,
@@ -20,7 +25,7 @@ class Temperature {
         Rankine.unit,
         Delisle.unit,
         Romer.unit
-    ]
+    ];
 
     static _nothing(val: number): number { return val; };
     formula(): ((val: number) => number)[][] { // return array of function which return number
@@ -42,8 +47,6 @@ class Temperature {
             let formulas = x.formula();
             try {
                 let formula = formulas[from][to]
-                console.log(formula.name)
-                console.log(formula)
                 if (!formula) throw 'err'
                 return formula(value);
             } catch (err) { throw 'No formula found! Please check unit supplied' }
