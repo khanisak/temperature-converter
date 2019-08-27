@@ -20,6 +20,9 @@ class Kelvin {
     static toRankine(kelvin: number = 1): number {
         return kelvin * 1.8
     }
+    static toDelisle(kelvin: number = 1): number {
+        return (373.15 - kelvin) * 1.5
+    }
 }
 
 export { Kelvin }

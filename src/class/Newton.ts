@@ -25,6 +25,10 @@ class Newton {
     static toRankine(newton: number = 1): number {
         return newton * 60 / 11 + 491.67
     }
+
+    static toDelisle(newton: number = 1): number {
+        return (33 - newton) * 50 / 11
+    }
 }
 
 export { Newton }

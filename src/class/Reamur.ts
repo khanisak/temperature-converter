@@ -20,6 +20,9 @@ class Reamur {
     static toRankine(reamur: number = 1): number {
         return reamur * 2.25 + 491.67
     }
+    static toDelisle(reamur: number = 1): number {
+        return (80 - reamur) * 1.875
+    }
 }
 
 export { Reamur }
