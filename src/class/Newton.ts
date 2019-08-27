@@ -21,6 +21,10 @@ class Newton {
     static toReamur(newton: number = 1): number {
         return newton * 80 / 33
     }
+
+    static toRankine(newton: number = 1): number {
+        return newton * 60 / 11 + 491.67
+    }
 }
 
 export { Newton }

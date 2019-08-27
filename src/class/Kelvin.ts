@@ -17,6 +17,9 @@ class Kelvin {
     static toNewton(kelvin: number = 1): number {
         return (kelvin - 273.15) * 33 / 100
     }
+    static toRankine(kelvin: number = 1): number {
+        return kelvin * 1.8
+    }
 }
 
 export { Kelvin }

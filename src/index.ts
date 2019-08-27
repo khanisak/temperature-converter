@@ -7,3 +7,6 @@ export default Temperature
 export {
     Celcius, Fahrenheit, Kelvin
 }
+
+
+const x = new Temperature();

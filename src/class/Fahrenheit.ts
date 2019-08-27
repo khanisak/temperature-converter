@@ -18,6 +18,10 @@ class Fahrenheit {
     static toNewton(fahrenheit: number = 1): number {
         return (fahrenheit - 32) * 11 / 60
     }
+    static toRankine(fahrenheit: number = 1): number {
+        return  fahrenheit + 459.67
+
+    }
 }
 
 export { Fahrenheit }
