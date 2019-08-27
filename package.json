@@ -14,9 +14,7 @@
 	],
 	"main": "build/index.js",
 	"scripts": {
-		"start": "npm run build && node xxx",
-		"clean": "rm -rf build && mkdir build",
-		"build": "npm run clean && babel ./src -d build --ignore ./src/views --copy-files"
+		"clean": "rm -rf build"
 	},
 	"author": "Khanis Anthony",
 	"license": "MIT",
@@ -32,13 +30,6 @@
 		"@types/node": "^12.7.2"
 	},
 	"devDependencies": {
-		"@babel/cli": "^7.5.0",
-		"@babel/core": "^7.5.4",
-		"@babel/node": "^7.5.0",
-		"@babel/plugin-proposal-class-properties": "^7.5.0",
-		"@babel/plugin-proposal-export-default-from": "^7.5.2",
-		"@babel/preset-env": "^7.5.4",
-		"babel-preset-minify": "^0.5.0",
 		"nodemon": "^1.19.1",
 		"ts-node": "^8.3.0",
 		"typescript": "^3.5.3"
