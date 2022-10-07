@@ -1,38 +1,42 @@
-import Unit from '../interface/Unit'
+import IBaseTemperature from '../interfaces/IBaseTemperature';
+import IUnit from '../interfaces/IUnit';
+import { Celcius } from './Celcius';
+import { Delisle } from './Delisle';
+import { Fahrenheit } from './Fahrenheit';
+import { Kelvin } from './Kelvin';
+import { Newton } from './Newton';
+import { Rankine } from './Rankine';
+import { Reamur } from './Reamur';
+import Temperature from './Temperature';
 
-class Romer {
-    static unit: Unit = {
+class Romer extends Temperature implements IBaseTemperature {
+    unit: IUnit
+
+    constructor(value: number) {
+        super(value);
+        this.unit = Romer.unit;
+    }
+
+    static unit = {
         name: 'Rømer',
         code: '°Rø'
     }
 
-    static toCelcius(romer: number = 1): number {
-        return (romer - 7.5) * 40 / 21
-    }
+    toCelcius = () => new Celcius((this.value - 7.5) * 40 / 21);
 
-    static toFahrenheit(romer: number = 1): number {
-        return (romer - 7.5) * 24 / 7 + 32
-    }
+    toDelisle = () => new Delisle((60 - this.value) * 20 / 7);
 
-    static toKelvin(romer: number = 1): number {
-        return (romer - 7.5) * 40 / 21 + 273.15
-    }
+    toFahrenheit = () => new Fahrenheit((this.value - 7.5) * 24 / 7 + 32);
 
-    static toReamur(romer: number = 1): number {
-        return (romer - 7.5) * 32 / 21
-    }
+    toKelvin = () => new Kelvin((this.value - 7.5) * 40 / 21 + 273.15);
 
-    static toNewton(romer: number = 1): number {
-        return (romer - 7.5) * 22 / 35
-    }
+    toNewton = () => new Newton((this.value - 7.5) * 22 / 35);
 
-    static toRankine(romer: number = 1): number {
-        return (romer - 7.5) * 24 / 7 + 491.67
-    }
+    toRankine = () => new Rankine((this.value - 7.5) * 24 / 7 + 491.67);
 
-    static toDelisle(romer: number = 1): number {
-        return (60 - romer) * 20 / 7
-    }
+    toReamur = () => new Reamur((this.value - 7.5) * 32 / 21);
+
+    toRomer = () => this;
 }
 
 export { Romer }
