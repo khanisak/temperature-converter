@@ -16,7 +16,7 @@ jobs:
           node-version: '16.17.1'
           registry-url: 'https://registry.npmjs.org'
       - run: npm install
-      - run: cat /home/runner/work/_temp/.npmrc
+      - run: npm run build
       - name: Run semantic-release
         run: npm run semantic-release
         env: # Or as an environment variable
