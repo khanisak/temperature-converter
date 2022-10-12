@@ -37,7 +37,7 @@ import { units } from '@khanisak/temperature-converter';
 console.log(units);
 ```
 
-### Available property
+### Temperature Property
 | Name | Type | Description |
 |---|---|---|
 | value | number | value of current temperature
