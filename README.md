@@ -1,6 +1,6 @@
 # Temperature Converter
 
-Temperature converter is a tiny javascript library for working with Temperature values.
+Lightweight javascript library to calculate Temperature values.
 
 ### Installation
 With [npm](https://www.npmjs.com/ "npm") : 
@@ -8,27 +8,40 @@ With [npm](https://www.npmjs.com/ "npm") :
 `npm install --save @khanisak/temperature-converter`
 
 ### Usage
-Import library
 ```javascript
- const tConverter = require('@khanisak/temperature-converter').default;
+import { Celcius, Fahrenheit, Kelvin } from '@khanisak/temperature-converter';
 ```
-or with ES6
-```javascript
-import tConverter from '@khanisak/temperature-converter'
-```
+
 Use it
 ```javascript
 // "Celcius to Fahrenheit
-var result = tConverter.convert(15,  tConverter.unit.Celcius, tConverter.unit.Fahrenheit) // 59
+const fahrenheit =  new Celcius(15).toFahrenheit(); 
+console.log(fahrenheit.value); // will result 59
+console.log(fahrenheit.unit); // { name: "Fahrenheit", code: "°F" }
 
 // "Fahrenheit to Kelvin
-var result = tConverter.convert(15,  tConverter.unit.Fahrenheit, tConverter.unit.Kelvin) // 263.7055555555555
+const kelvin = new Fahrenheit(15).toKelvin();
+console.log(kelvin.value); // will result 263.7055555555555
+console.log(kelvin.unit); // { name: "Kelvin", code: "°K" }
 
 // "Kelvin to Celcius
-var result = tConverter.convert(15,  tConverter.unit.Kelvin, tConverter.unit.Celcius) // -258.15
-
-// "List all supported temperature units"
-console.log(tConverter.units)
+const celcius = new Kelvin(15).toCelcius();
+console.log(celcius.value); // will result -258.15
+console.log(celcius.unit); // { name: "Celcius", code: "°C" }
 ```
+
+list all temperature units available
+```javascript
+import { units } from '@khanisak/temperature-converter';
+
+console.log(units);
+```
+
+### Temperature Property
+| Name | Type | Description |
+|---|---|---|
+| value | number | value of current temperature
+| unit | object | name and code of current unit. ex: { name: "Celcius", code: '°C' }
+
 ### License
 This project is licensed under the [MIT](https://github.com/khanisak/temperature-converter/blob/master/license "MIT") License

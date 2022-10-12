@@ -1,31 +1,43 @@
-import Unit from '../interface/Unit'
+import IBaseTemperature from '../interfaces/IBaseTemperature'
+import IUnit from '../interfaces/IUnit'
+import { Celcius } from './Celcius';
+import { Delisle } from './Delisle';
+import { Fahrenheit } from './Fahrenheit';
+import { Kelvin } from './Kelvin';
+import { Newton } from './Newton';
+import { Rankine } from './Rankine';
+import { Romer } from './Romer';
+import Temperature from './Temperature'
 
-class Reamur {
-    static unit: Unit = {
+class Reamur extends Temperature implements IBaseTemperature {
+    unit: IUnit;
+
+    constructor(value: number) {
+        super(value);
+        this.unit = Reamur.unit;
+    }
+
+    static unit = {
         name: 'Réamur',
         code: '°Ré'
     }
-    static toCelcius(reamur: number = 1): number {
-        return reamur / 0.8
-    }
-    static toFahrenheit(reamur: number = 1): number {
-        return reamur * 2.25 + 32
-    }
-    static toKelvin(reamur: number = 1): number {
-        return reamur / 0.8 + 273.15
-    }
-    static toNewton(reamur: number = 1): number {
-        return reamur * 33 / 80
-    }
-    static toRankine(reamur: number = 1): number {
-        return reamur * 2.25 + 491.67
-    }
-    static toDelisle(reamur: number = 1): number {
-        return (80 - reamur) * 1.875
-    }
-    static toRomer(reamur: number = 1): number {
-        return reamur * 21 / 32 + 7.5
-    }
+
+    toCelcius = () => new Celcius(this.value / 0.8);
+
+    toDelisle = () => new Delisle((80 - this.value) * 1.875);
+
+    toFahrenheit = () => new Fahrenheit(this.value * 2.25 + 32);
+
+    toKelvin = () => new Kelvin(this.value / 0.8 + 273.15);
+
+    toNewton = () => new Newton(this.value * 33 / 80);
+
+    toRankine = () => new Rankine(this.value * 2.25 + 491.67);
+
+    toReamur = () => this;
+
+    toRomer = () => new Romer(this.value * 21 / 32 + 7.5);
 }
+
 
 export { Reamur }
