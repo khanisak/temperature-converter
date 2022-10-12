@@ -1,6 +1,6 @@
 {
 	"name": "@khanisak/temperature-converter",
-	"version": "2.0.1-alpha.1",
+	"version": "2.0.1-alpha.2",
 	"description": "Javascript lightweight library to manipulate temperature units",
 	"keywords": [
 		"temperature",
